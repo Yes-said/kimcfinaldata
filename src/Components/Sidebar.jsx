@@ -24,14 +24,13 @@ const Sidebar = () => (
     {/* Style JSX for responsiveness */}
     <style jsx>{`
       .menu {
-        /* Adjust these styles for responsiveness */
-        width: 240px; /* Set a fixed width for larger screens */
+        width: 240px;
       }
 
       @media screen and (max-width: 768px) {
         .menu {
           position: fixed;
-          top: 0;
+          top: 60px; /* Push down from top by 60px */
           left: 0;
           bottom: 0;
           z-index: 10;

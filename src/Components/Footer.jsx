@@ -13,9 +13,17 @@ const Footer = () => (
     </div>
     <style jsx>{`
       .footer {
-        position: relative;
-        bottom: -100px;
         width: 100%;
+        position: relative;
+        margin-top: 450px; /* Push the footer down */
+        bottom: 0;
+      }
+
+      /* Media query for responsiveness */
+      @media screen and (max-width: 768px) {
+        .footer {
+          margin-top: 50px; /* Adjust margin for smaller screens */
+        }
       }
 
       /* Ensure footer content is pushed downwards */
@@ -23,14 +31,10 @@ const Footer = () => (
         padding-bottom: 30px; /* Adjust this value as needed */
       }
 
+      /* Media query for reducing padding on smaller screens */
       @media screen and (max-width: 768px) {
-        .footer {
-          position: static; /* Revert to normal flow on smaller screens */
-        }
-
-        /* Reduce bottom padding on smaller screens */
         .footer .content {
-          padding-bottom: 20px;
+          padding-bottom: 20px; /* Reduce bottom padding on smaller screens */
         }
       }
     `}</style>
