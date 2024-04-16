@@ -2,22 +2,38 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bulma/css/bulma.min.css';
 
-const Sidebar = () => (
-  <aside className="menu is-hidden-touch has-background-primary" style={{ height: '100vh', overflowY: 'auto' }}>
+const Sidebar = ({ toggleMenu }) => (
+  <aside
+    className={`menu is-hidden-touch has-background-primary `}
+    style={{ 
+      height: 'calc(100vh - 60px)', 
+      overflowY: 'auto', 
+      paddingTop: '20px', /* Adjusted top padding for spacing */
+      marginTop: '150px' /* Added margin to create space under navbar */
+    }}
+  >
     {/* Adding the background color class from Bulma to the sidebar */}
     <p className="menu-label">Menu</p>
     <ul className="menu-list">
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard" onClick={toggleMenu}>
+          Dashboard
+        </Link>
       </li>
       <li>
-        <Link to="/results">Results</Link>
+        <Link to="/results" onClick={toggleMenu}>
+          Results
+        </Link>
       </li>
       <li>
-        <Link to="/courses">Courses</Link>
+        <Link to="/courses" onClick={toggleMenu}>
+          Courses
+        </Link>
       </li>
       <li>
-        <Link to="/students">Students</Link>
+        <Link to="/students" onClick={toggleMenu}>
+          Students
+        </Link>
       </li>
     </ul>
 
@@ -32,7 +48,7 @@ const Sidebar = () => (
           position: fixed;
           top: 60px; /* Push down from top by 60px */
           left: 0;
-          bottom: 0;
+          bottom: -50px;
           z-index: 10;
           width: 80%; /* Adjust width for smaller screens */
           max-width: 280px;
@@ -40,10 +56,17 @@ const Sidebar = () => (
           background-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
           transition: transform 0.3s ease-in-out;
           transform: translateX(-100%); /* Initially hide off-screen */
+          margin-top: 0; /* Remove margin at the top for smaller screens */
         }
 
-        .menu.is-active {
-          transform: translateX(0); /* Slide in when active */
+        
+
+        .menu-list li {
+          transition: background-color 0.3s;
+        }
+
+        .menu-list li:hover {
+          background-color: #dddddd; /* Grey hover effect */
         }
       }
     `}</style>

@@ -11,33 +11,7 @@ const Footer = () => (
         <a href="/">Home</a> | <a href="/about">About</a> | <a href="/contact">Contact</a>
       </p>
     </div>
-    <style jsx>{`
-      .footer {
-        width: 100%;
-        position: relative;
-        margin-top: 450px; /* Push the footer down */
-        bottom: 0;
-      }
-
-      /* Media query for responsiveness */
-      @media screen and (max-width: 768px) {
-        .footer {
-          margin-top: 50px; /* Adjust margin for smaller screens */
-        }
-      }
-
-      /* Ensure footer content is pushed downwards */
-      .footer .content {
-        padding-bottom: 30px; /* Adjust this value as needed */
-      }
-
-      /* Media query for reducing padding on smaller screens */
-      @media screen and (max-width: 768px) {
-        .footer .content {
-          padding-bottom: 20px; /* Reduce bottom padding on smaller screens */
-        }
-      }
-    `}</style>
+    
   </footer>
 );
 

@@ -1,13 +1,25 @@
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.footer {
+  width: 100%;
+  position: relative;
+  margin-top: 350px; /* Push the footer down */
+  bottom: 0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-top: 50px; /* Adjust margin for smaller screens */
   }
 }
 
-.card {
-  padding: 2em;
+/* Ensure footer content is pushed downwards */
+.footer .content {
+  padding-bottom: 30px; /* Adjust this value as needed */
 }
 
-.read-the-docs {
-  color: #888;
-}
+/* Media query for reducing padding on smaller screens */
+@media screen and (max-width: 768px) {
+  .footer .content {
+    padding-bottom: 20px; /* Reduce bottom padding on smaller screens */
+  }
+  }
