@@ -19,9 +19,11 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+        
         <div className="columns">
           <div className="column is-2">
             <Sidebar />
+           
           </div>
           <div className="column">
             <Routes>
